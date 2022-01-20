@@ -6,6 +6,7 @@ build:
 
 .PHONY: docker-images
 docker-images:
+	go mod vendor
 	$(DOCKER_BUILD) \
 		--build-arg CHAINID=ibc0 \
 		--tag $(DOCKER_REPO)tendermint-chain0:$(DOCKER_TAG) .

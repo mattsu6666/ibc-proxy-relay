@@ -6,7 +6,7 @@ WORKDIR /root
 
 COPY ./ ./
 
-RUN go build -mod readonly -o /root/build/simd ./simapp/simd
+RUN go build -mod=vendor -o /root/build/simd ./simapp/simd
 
 FROM alpine:${ALPINE_VER} AS initializer
 
