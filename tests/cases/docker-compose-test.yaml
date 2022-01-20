@@ -21,6 +21,9 @@ services:
       retries: 5
     networks:
       - *network-common
+    extra_hosts:
+      - host.internal:${LOCAL_HOST_IP}
+
   tendermint-chain1:
     container_name: tendermint-chain1
     image: tendermint-chain1:${TAG}
@@ -36,6 +39,9 @@ services:
       retries: 5
     networks:
       - *network-common
+    extra_hosts:
+      - host.internal:${LOCAL_HOST_IP}
+
   tendermint-proxy0:
     container_name: tendermint-proxy0
     image: tendermint-proxy0:${TAG}
@@ -51,3 +57,5 @@ services:
       retries: 5
     networks:
       - *network-common
+    extra_hosts:
+      - host.internal:${LOCAL_HOST_IP}
